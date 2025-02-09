@@ -10,15 +10,23 @@
         height: 360px;
         width: 100%;
         object-fit: cover;
+        margin-bottom:16px
       }
     </style>
   </head>
   <body>
+    {% include 'nav.html' %}
+    <img id="banner" class="img-fluid" src="/static/career-banner.jpg">
     <div class="container">
     <h1 class="text-center mt-2 mb-4">{{company_name}} Careers</h1>
-    <img id="banner" class="img-fluid" src="https://9b24e2e2-a916-4758-8a33-25c529f0c408-00-27j94tgdfc28b.worf.replit.dev/static/career-banner.jpg">
-    <h2 class="text-center mt-2 mb-4">About {{company_name}} Careers</h2>
+    <div class="row" style="margin-bottom:16px">
+      <div class="col-md-7">
     <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+      <div class="d-none d-md-block col-md-5">
+      <img src= "/static/people.avif" style="height:280px; border-radius:4px;"> 
+      </div>
+    </div>
     <h2 class="text-center mt-2 mb-4">Open Positions</h2>
     <div>
       {% for job in jobs %}
@@ -26,9 +34,9 @@
       {% endfor %}
     </div>
       <div class="text-center">
-        <button class="btn btn-primary btn-lg">Contact Us</button>
-        <p class="mt-4">Copyright 2023, Awesome Careers</p>
+        <a class="btn btn-primary btn-lg">Contact Us</a>
       </div>
-    </div>  
+    </div>
+    {% include 'footer.html' %}
   </body>
 </html>
